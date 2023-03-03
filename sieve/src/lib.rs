@@ -2,13 +2,9 @@ pub fn primes_up_to(upper_bound: u64) -> Vec<u64> {
     // Create a vector of booleans up the the upper bound + 1. All values are initially true
     let mut is_prime = vec![true; (upper_bound + 1) as usize];
 
-    // Mark 0 as not prime
+    // Mark 0 and 1 as not prime
     is_prime[0] = false;
-
-    // If the upper bound is at least 1, mark 1 not prime
-    if upper_bound >= 1 {
-        is_prime[1] = false;
-    }
+    is_prime[1] = false;
 
     // Initialize a new `current` number, starting at the first prime number, 2
     let mut current = 2;
